@@ -13,6 +13,7 @@ namespace DataObjects
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public string Text { get; set; }
+        public int Type { get; set; }
 
         public Event()
         {
@@ -22,9 +23,11 @@ namespace DataObjects
             DueDate = DateTime.Today;
             StartTime = DueDate;
             EndTime = StartTime.AddHours(1);
+            Type = 1;
         }
 
-        public Event(string id, string user, DateTime dueDate, DateTime startTime, DateTime endTime, string text)
+        public Event(string id, string user, DateTime dueDate, DateTime startTime, 
+                     DateTime endTime, string text, int type)
         {
             Id = id;
             User = user;
@@ -32,6 +35,7 @@ namespace DataObjects
             StartTime = startTime;
             EndTime = endTime;
             Text = text;
+            Type = type;
         }
     }
 }

@@ -16,11 +16,13 @@ namespace EventBooker
         public string Text { get; set; }
         public Location Location { get; set; }
         public string Postcode { get; set; }
+        public int Type { get; set; }
         public EventToBook(){
             Text = "";
             SkillSetRequired = "";
             DueDate = DateTime.Today;
             Length = new TimeSpan(1, 0, 0);
+            Type = 1;
         }
     }
 
@@ -102,7 +104,8 @@ namespace EventBooker
                 toBook.DueDate, 
                 startDate, 
                 endDate,
-                toBook.Text);
+                toBook.Text,
+                toBook.Type);
 
         }
 
@@ -203,7 +206,7 @@ namespace EventBooker
 
         public bool OnAdditionalOptimalBookingCheck(Event optimalBooking, Event provisonalBooking)
         {
-            return true;
+            return false;
         }
 
     }

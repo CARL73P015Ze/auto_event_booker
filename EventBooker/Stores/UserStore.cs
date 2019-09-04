@@ -1,37 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DataObjects;
 
 namespace Stores
 {
-
-    public class WorkingHours
-    {
-        public DateTime Start { get; set; }
-        public DateTime Finish { get; set; }
-        public WorkingHours()
-        {
-            Start = DateTime.Today;
-            Finish = Start.AddHours(1);
-        }
-    }
-
-    public class User
-    {
-        public string Name { get; set; }
-        public List<string> SkillSet { get; set; }
-        public Dictionary<DayOfWeek, WorkingHours> WorkingDays { get; set; }
-
-        public User()
-        {
-            SkillSet = new List<string>();
-            WorkingDays = new Dictionary<DayOfWeek, WorkingHours>();
-            Name = "";
-        }
-
-
-    }
-
     public class UserStore
     {
         private Dictionary<string, User> Users = new Dictionary<string, User>();

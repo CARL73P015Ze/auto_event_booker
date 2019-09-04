@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using Stores;
+using DataObjects;
 
 namespace EventBooker
 {
+
+
     public class EventToBook
     {
         public DateTime DueDate { get; set; }
         public TimeSpan Length { get; set; }
         public string SkillSetRequired { get; set; }
         public string Text { get; set; }
-
+        public Location Location { get; set; }
+        public string Postcode { get; set; }
         public EventToBook(){
             Text = "";
             SkillSetRequired = "";
